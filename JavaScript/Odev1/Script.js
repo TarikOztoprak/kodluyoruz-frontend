@@ -27,8 +27,6 @@ else if (new Date().getDay() == 0) {
 Hosgeldin.style.textAlign = "center";
 Hosgeldin.style.marginTop = "30vh";
 
-    
-
 setInterval(myTimer, 1000);
 
 function myTimer() {
