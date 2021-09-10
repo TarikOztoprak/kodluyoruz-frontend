@@ -13,11 +13,15 @@ function Main({data, setData, isComplate, setIsComplate}) {
                     <div>
                         <input className="toggle" type="checkbox" onClick = {(e) =>{
                             if (e.target.checked) {
-                                isComplate[index] = "completed"     
+                                isComplate[index] = "completed"   
+                                let tempIsComplate = [...isComplate]
+                                setIsComplate(tempIsComplate)
                             }
                             else
                             {
                                 isComplate[index] = "no"     
+                                let tempIsComplate = [...isComplate]
+                                setIsComplate(tempIsComplate)
                             }
                         }}/>
                         <label>{td}</label>
@@ -25,8 +29,10 @@ function Main({data, setData, isComplate, setIsComplate}) {
                             {
                                 data.splice(index, 1);
                                 isComplate.splice(index, 1);
-                                setData(data)
-                                setIsComplate(isComplate)
+                                let tempData = [...data]
+                                let tempIsComplate = [...isComplate]
+                                setData(tempData)
+                                setIsComplate(tempIsComplate)
                             }}></button>
                     </div>
                  </li>
